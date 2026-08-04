@@ -1,11 +1,12 @@
-from dataclasses import dataclass
-from typing import Optional
+from dataclasses import dataclass, field
+from uuid import UUID, uuid4
+
 
 from src.domain.enums.character_class import CharacterClass
 
-@dataclass
+@dataclass(kw_only=True)
 class Player:
-    id: str
+    id: UUID = field(default_factory=uuid4)
     user_id: str
     name: str
     character_class: CharacterClass
@@ -21,11 +22,17 @@ class Player:
         return self.hp_current > 0
 
     def take_damage(self, amount: int) -> None:
+        if amount <= 0:
+            raise ValueError("Amount must be greater than 0.")
+        
         self.hp_current -= amount
         if self.hp_current < 0:
             self.hp_current = 0
 
     def heal(self, amount: int) -> None:
+        if amount <= 0:
+            raise ValueError("Amount must be greater than 0.")
+
         if not self.is_alive():
             return # Não pode curar se estiver morto
 

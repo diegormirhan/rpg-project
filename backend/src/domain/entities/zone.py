@@ -1,9 +1,10 @@
 from dataclasses import dataclass, field
 from typing import List
+from uuid import UUID, uuid4
 
-@dataclass
+@dataclass(kw_only=True)
 class Zone:
-    id: str
+    id: UUID = field(default_factory=uuid4)
     name: str
     description: str
 
@@ -20,9 +21,9 @@ class Zone:
     max_monsters_alive: int = 10
 
     def can_player_enter(self, player_level: int) -> bool:
-        "Verify if player can survive and enter in the zone"
+        """Verify if player can survive and enter in the zone."""
         return player_level >= self.min_level_required
 
     def is_pvp_allowed(self) -> bool:
-        "reverse the safe zone logic to becode easier to read in combat. If its NOT safe zone, the PVP is open"
+        """reverse the safe zone logic to becode easier to read in combat. If its NOT safe zone, the PVP is open."""
         return not self.is_safe_zone

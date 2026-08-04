@@ -1,12 +1,13 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Optional
+from uuid import UUID, uuid4
 from src.domain.enums.item_type import ItemType
 from src.domain.enums.item_rarity import ItemRarity
 from src.domain.enums.equipment_slot import EquipmentSlot
 
-@dataclass
+@dataclass(kw_only=True)
 class Item:
-    id: str
+    id: UUID = field(default_factory=uuid4)
     name: str
     description: str
     item_type: ItemType

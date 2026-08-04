@@ -1,9 +1,10 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from src.domain.enums.enchantment_type import EnchantmentType
+from uuid import UUID, uuid4
 
-@dataclass
+@dataclass(kw_only=True)
 class Enchantment:
-    id: str
+    id:  UUID = field(default_factory=uuid4)
     name: str
     description: str
     enchantment_type: EnchantmentType
@@ -18,7 +19,7 @@ class Enchantment:
     is_percentage: bool = False
 
     def apply_buff(self, base_value: int) -> int:
-        "Receives base value. Returns the new value with enchantment"
+        """Receives base value. Returns the new value with enchantment."""
         if self.is_percentage:
             bonus = int(base_value * (self.power_value / 100.0))
             return base_value + bonus
