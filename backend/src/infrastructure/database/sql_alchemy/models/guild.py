@@ -11,7 +11,7 @@ from src.infrastructure.database.sql_alchemy.base import TimestampMixin
 from src.infrastructure.database.sql_alchemy.base import UUIDMixin
 
 
-class Guild(UUIDMixin, TimestampMixin, Base):
+class GuildModel(UUIDMixin, TimestampMixin, Base):
     __tablename__ = "guilds"
 
     name: Mapped[str] = mapped_column(

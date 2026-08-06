@@ -16,7 +16,7 @@ from src.infrastructure.database.sql_alchemy.base import UUIDMixin
 from src.domain.enums.character_class import CharacterClass
 
 
-class Character(UUIDMixin, TimestampMixin, Base):
+class CharacterModel(UUIDMixin, TimestampMixin, Base):
     __tablename__ = "characters"
 
     user_id: Mapped[UUID] = mapped_column(

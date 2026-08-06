@@ -22,7 +22,7 @@ from src.domain.enums.transaction_status import TransactionStatus
 from src.domain.enums.transaction_type import TransactionType
 
 
-class Transaction(UUIDMixin, TimestampMixin, Base):
+class TransactionModel(UUIDMixin, TimestampMixin, Base):
     __tablename__ = "transactions"
 
     __table_args__ = (
