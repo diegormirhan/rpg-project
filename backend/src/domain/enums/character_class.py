@@ -2,7 +2,6 @@ from enum import StrEnum
 
 
 class CharacterClass(StrEnum):
-    WARRIOR = "warrior"
-    MAGE = "mage"
+    KNIGHT = "knight"
     ARCHER = "archer"
-    ASSASSIN = "assassin"
+    NECROMANCER = "necromancer"
