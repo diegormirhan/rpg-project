@@ -10,12 +10,12 @@ from sqlalchemy.orm import relationship
 
 from sqlalchemy.sql import func
 
-from app.adapters.outbound.persistence.base import Base
+from src.infrastructure.database.sql_alchemy.base import Base
 
 from src.domain.enums.guild_rank import GuildRank
 
 
-class GuildMember(Base):
+class GuildMemberModel(Base):
     __tablename__ = "guild_members"
 
     guild_id: Mapped[UUID] = mapped_column(

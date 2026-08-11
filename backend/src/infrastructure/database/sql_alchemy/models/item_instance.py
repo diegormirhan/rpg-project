@@ -20,7 +20,7 @@ from src.infrastructure.database.sql_alchemy.base import UUIDMixin
 from src.domain.enums.enchantment_type import EnchantmentType
 
 
-class ItemInstance(UUIDMixin, TimestampMixin, Base):
+class ItemInstanceModel(UUIDMixin, TimestampMixin, Base):
     __tablename__ = "item_instances"
 
     __table_args__ = (
@@ -30,7 +30,7 @@ class ItemInstance(UUIDMixin, TimestampMixin, Base):
 
     item_base_id: Mapped[UUID] = mapped_column(
         ForeignKey(
-            "items_base.id",
+            "base_items.id",
             ondelete="CASCADE",
         ),
         index=True,

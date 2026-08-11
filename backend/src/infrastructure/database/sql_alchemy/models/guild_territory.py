@@ -12,7 +12,7 @@ from src.infrastructure.database.sql_alchemy.base import Base
 
 from sqlalchemy.sql import func
 
-class GuildTerritory(Base):
+class GuildTerritoryModel(Base):
     __tablename__ = "guild_territories"
 
     guild_id: Mapped[UUID] = mapped_column(

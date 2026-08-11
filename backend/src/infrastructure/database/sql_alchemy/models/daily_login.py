@@ -14,7 +14,7 @@ from src.infrastructure.database.sql_alchemy.base import Base
 from src.infrastructure.database.sql_alchemy.base import UUIDMixin
 
 
-class DailyLogin(UUIDMixin, Base):
+class DailyLoginModel(UUIDMixin, Base):
     __tablename__ = "daily_logins"
 
     __table_args__ = (

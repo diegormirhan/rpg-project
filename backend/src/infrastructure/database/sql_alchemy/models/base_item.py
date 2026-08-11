@@ -17,8 +17,8 @@ from src.domain.enums.item_rarity import ItemRarity
 from src.domain.enums.item_type import ItemType
 
 
-class ItemBase(UUIDMixin, TimestampMixin, Base):
-    __tablename__ = "items_base"
+class BaseItemModel(UUIDMixin, TimestampMixin, Base):
+    __tablename__ = "base_items"
 
     __table_args__ = (
         CheckConstraint("buy_price >= 0"),

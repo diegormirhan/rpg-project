@@ -10,7 +10,7 @@ from src.infrastructure.database.sql_alchemy.base import TimestampMixin
 from src.infrastructure.database.sql_alchemy.base import UUIDMixin
 
 
-class User(UUIDMixin, TimestampMixin, Base):
+class UserModel(UUIDMixin, TimestampMixin, Base):
     __tablename__ = "users"
 
     discord_id: Mapped[str] = mapped_column(

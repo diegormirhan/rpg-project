@@ -14,7 +14,7 @@ from src.infrastructure.database.sql_alchemy.base import Base
 from src.infrastructure.database.sql_alchemy.base import UUIDMixin
 
 
-class PvpRecord(UUIDMixin, Base):
+class PvpRecordModel(UUIDMixin, Base):
     __tablename__ = "pvp_records"
 
     killer_character_id: Mapped[UUID] = mapped_column(

@@ -9,7 +9,7 @@ from src.infrastructure.database.sql_alchemy.base import TimestampMixin
 from src.infrastructure.database.sql_alchemy.base import UUIDMixin
 
 
-class Zone(UUIDMixin, TimestampMixin, Base):
+class ZoneModel(UUIDMixin, TimestampMixin, Base):
     __tablename__ = "zones"
     name: Mapped[str] = mapped_column(
         String(50),
