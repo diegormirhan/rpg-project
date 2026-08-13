@@ -65,6 +65,6 @@ class BaseItemModel(UUIDMixin, TimestampMixin, Base):
     buy_price: Mapped[int] = mapped_column(Integer, nullable=False)
     sell_price: Mapped[int] = mapped_column(Integer, nullable=False)
     instances = relationship(
-        "ItemInstance",
+        "ItemInstanceModel",
         back_populates="item_base",
     )

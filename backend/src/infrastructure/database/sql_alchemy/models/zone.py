@@ -35,6 +35,6 @@ class ZoneModel(UUIDMixin, TimestampMixin, Base):
     respawn_x: Mapped[int] = mapped_column(default=0)
     respawn_y: Mapped[int] = mapped_column(default=0)
     characters = relationship(
-        "Character",
+        "CharacterModel",
         back_populates="current_zone",
     )

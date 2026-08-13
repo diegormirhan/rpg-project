@@ -38,4 +38,4 @@ class DailyLoginModel(UUIDMixin, Base):
         Boolean,
         default=False,
     )
-    character = relationship("Character")
+    character = relationship("CharacterModel")

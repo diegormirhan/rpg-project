@@ -34,6 +34,6 @@ class GuildTerritoryModel(Base):
         default=0,
     )
     guild = relationship(
-        "Guild",
+        "GuildModel",
         back_populates="territories",
     )

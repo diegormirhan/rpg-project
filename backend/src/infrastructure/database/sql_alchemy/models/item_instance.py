@@ -61,10 +61,10 @@ class ItemInstanceModel(UUIDMixin, TimestampMixin, Base):
         server_default=func.now(),
     )
     item_base = relationship(
-        "ItemBase",
+        "BaseItemModel",
         back_populates="instances",
     )
     owner = relationship(
-        "Character",
+        "CharacterModel",
         back_populates="inventory",
     )

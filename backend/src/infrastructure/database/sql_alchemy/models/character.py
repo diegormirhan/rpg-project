@@ -47,14 +47,14 @@ class CharacterModel(UUIDMixin, TimestampMixin, Base):
     position_x: Mapped[int] = mapped_column(Integer, default=0)
     position_y: Mapped[int] = mapped_column(Integer, default=0)
     tower_highest_floor: Mapped[int] = mapped_column(Integer, default=0)
-    user: Mapped["User"] = relationship(
+    user: Mapped["UserModel"] = relationship(
         back_populates="characters",
     )
-    current_zone: Mapped["Zone"] = relationship(
+    current_zone: Mapped["ZoneModel"] = relationship(
         back_populates="characters",
     )
     inventory = relationship(
-        "ItemInstance",
+        "ItemInstanceModel",
         back_populates="owner",
         cascade="all, delete-orphan",
     )

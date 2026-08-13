@@ -34,11 +34,11 @@ class PvpRecordModel(UUIDMixin, Base):
         server_default=func.now(),
     )
     killer = relationship(
-        "Character",
+        "CharacterModel",
         foreign_keys=[killer_character_id],
     )
     victim = relationship(
-        "Character",
+        "CharacterModel",
         foreign_keys=[victim_character_id],
     )
-    zone = relationship("Zone")
+    zone = relationship("ZoneModel")
