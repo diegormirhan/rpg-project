@@ -35,9 +35,9 @@ class GuildMemberModel(Base):
         server_default=func.now(),
     )
     guild = relationship(
-        "Guild",
+        "GuildModel",
         back_populates="members",
     )
     character = relationship(
-        "Character",
+        "CharacterModel",
     )

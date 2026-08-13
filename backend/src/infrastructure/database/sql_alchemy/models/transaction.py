@@ -52,10 +52,10 @@ class TransactionModel(UUIDMixin, TimestampMixin, Base):
         default=list,
     )
     from_character = relationship(
-        "Character",
+        "CharacterModel",
         foreign_keys=[from_character_id],
     )
     to_character = relationship(
-        "Character",
+        "CharacterModel",
         foreign_keys=[to_character_id],
     )

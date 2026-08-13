@@ -28,15 +28,15 @@ class GuildModel(UUIDMixin, TimestampMixin, Base):
         nullable=True,
     )
     leader = relationship(
-        "Character",
+        "CharacterModel",
     )
     members = relationship(
-        "GuildMember",
+        "GuildMemberModel",
         back_populates="guild",
         cascade="all, delete-orphan",
     )
     territories = relationship(
-        "GuildTerritory",
+        "GuildTerritoryModel",
         back_populates="guild",
         cascade="all, delete-orphan",
     )

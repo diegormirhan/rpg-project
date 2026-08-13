@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "FastAPI CLI",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "fastapi",
+            "cwd": "${workspaceFolder}/backend",
+            "args": [
+                "dev",
+                "src/main.py"
+            ]
+        }
+    ]
+}
