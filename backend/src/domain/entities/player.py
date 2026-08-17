@@ -16,7 +16,7 @@ class Player:
     hp_current: int = 100
     hp_max: int = 100
     mana_current: int = 50
-    mana_max = int = 50
+    mana_max: int = 50
 
     def is_alive(self) -> bool:
         return self.hp_current > 0
